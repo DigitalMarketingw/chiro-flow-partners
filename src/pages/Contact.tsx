@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Sparkles, Zap } from "lucide-react";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -58,9 +58,25 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 bg-pattern">
       {/* Hero Section */}
-      <section className="py-12 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-12 sm:py-20 overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-teal-400/20 to-green-400/20 rounded-full blur-3xl floating-element"></div>
+          
+          {/* Floating particles */}
+          <div className="absolute top-20 left-20 w-4 h-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-float opacity-60"></div>
+          <div className="absolute top-40 right-32 w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full floating-element opacity-70"></div>
+          <div className="absolute bottom-32 left-1/3 w-5 h-5 bg-gradient-to-r from-green-400 to-teal-500 rounded-full animate-float opacity-50"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-primary/10 via-accent/10 to-purple/10 text-primary text-sm font-medium mb-8 animate-fade-in hover-bounce border border-primary/20">
+              <Sparkles className="w-5 h-5 mr-3 text-yellow-500 animate-float" />
+              Get in Touch with Our Team
+              <Zap className="w-4 h-4 ml-3 text-orange-500 animate-pulse" />
+            </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 gradient-text-electric animate-fade-in">
               Contact EChiroPartners
             </h1>
@@ -72,10 +88,12 @@ const Contact = () => {
           <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
             {/* Contact Information */}
             <div className="lg:col-span-1 space-y-6">
-              <Card className="card-vibrant animate-stagger-2">
+              <Card className="card-vibrant animate-stagger-2 hover-3d">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
-                    <Mail className="h-5 w-5 text-primary" />
+                    <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center floating-element">
+                      <Mail className="h-5 w-5 text-white" />
+                    </div>
                     Email Us
                   </CardTitle>
                 </CardHeader>
@@ -86,7 +104,7 @@ const Contact = () => {
                   <div className="break-all">
                     <a 
                       href="mailto:digitalmar@actclinic.com" 
-                      className="text-primary hover:text-primary/80 transition-colors text-sm sm:text-base font-medium"
+                      className="text-primary hover:text-primary/80 transition-colors text-sm sm:text-base font-medium story-link"
                     >
                       digitalmar@actclinic.com
                     </a>
@@ -94,10 +112,12 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="card-vibrant animate-stagger-3">
+              <Card className="card-vibrant animate-stagger-3 hover-3d">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
-                    <Phone className="h-5 w-5 text-primary" />
+                    <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center floating-element">
+                      <Phone className="h-5 w-5 text-white" />
+                    </div>
                     Call Us
                   </CardTitle>
                 </CardHeader>
@@ -111,18 +131,20 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="card-vibrant animate-stagger-4">
+              <Card className="card-vibrant animate-stagger-4 hover-3d">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
-                    <Clock className="h-5 w-5 text-primary" />
+                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center floating-element">
+                      <Clock className="h-5 w-5 text-white" />
+                    </div>
                     Business Hours
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2 text-sm sm:text-base">
-                    <p><span className="font-medium">Monday - Friday:</span> 9:00 AM - 6:00 PM EST</p>
-                    <p><span className="font-medium">Saturday:</span> 10:00 AM - 4:00 PM EST</p>
-                    <p><span className="font-medium">Sunday:</span> Closed</p>
+                    <p><span className="font-medium gradient-text">Monday - Friday:</span> 9:00 AM - 6:00 PM EST</p>
+                    <p><span className="font-medium gradient-text">Saturday:</span> 10:00 AM - 4:00 PM EST</p>
+                    <p><span className="font-medium gradient-text">Sunday:</span> Closed</p>
                   </div>
                 </CardContent>
               </Card>
@@ -132,7 +154,7 @@ const Contact = () => {
             <div className="lg:col-span-2">
               <Card className="card-glow animate-scale-in">
                 <CardHeader>
-                  <CardTitle className="text-xl sm:text-2xl">Send us a Message</CardTitle>
+                  <CardTitle className="text-xl sm:text-2xl gradient-text-vibrant">Send us a Message</CardTitle>
                   <CardDescription className="text-sm sm:text-base">
                     Fill out the form below and we'll get back to you as soon as possible.
                   </CardDescription>
@@ -200,7 +222,7 @@ const Contact = () => {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full btn-vibrant text-sm sm:text-base py-2 sm:py-3 h-auto"
+                      className="w-full btn-vibrant text-sm sm:text-base py-2 sm:py-3 h-auto hover-bounce"
                     >
                       {isSubmitting ? (
                         <div className="loading-dots flex items-center justify-center gap-1">
