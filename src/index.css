@@ -329,15 +329,27 @@
 
   /* Vibrant Gradient Text */
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500 bg-clip-text text-transparent;
+    background: linear-gradient(to right, #3b82f6, #a855f7, #14b8a6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
   .gradient-text-vibrant {
-    @apply bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent;
+    background: linear-gradient(to right, #ec4899, #ef4444, #eab308);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
   .gradient-text-electric {
-    @apply bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent;
+    background: linear-gradient(to right, #22d3ee, #3b82f6, #9333ea);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
   /* Enhanced Backgrounds */
