@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,84 +15,134 @@ const Header = () => {
     { name: "Contact", href: "/contact" },
   ];
 
+  // Close mobile menu when clicking outside or on escape
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (isMenuOpen && !target.closest('.mobile-menu-container')) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('keydown', handleEscape);
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
   return (
-    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 hover-scale">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-md flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-sm">EC</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-semibold text-foreground">EChiroPartners</span>
-              <span className="text-xs text-muted-foreground">By Mynx Softwares Inc.</span>
-            </div>
-          </Link>
+    <>
+      <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border z-50 safe-area-top">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <Link to="/" className="flex items-center space-x-2 md:space-x-3 hover-scale" onClick={() => setIsMenuOpen(false)}>
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary to-accent rounded-md flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-xs md:text-sm">EC</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-lg md:text-xl font-semibold text-foreground">EChiroPartners</span>
+                <span className="text-xs text-muted-foreground hidden sm:block">By Mynx Softwares Inc.</span>
+              </div>
+            </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 story-link"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button asChild variant="outline" className="hover-scale">
-              <Link to="/contact">Contact</Link>
-            </Button>
-            <Button asChild className="hover-scale bg-gradient-to-r from-primary to-accent">
-              <Link to="/demo">Get Demo</Link>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 hover-scale"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
-            <nav className="flex flex-col space-y-4">
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 story-link font-medium"
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="flex flex-col space-y-2 pt-4">
-                <Button asChild variant="outline" className="w-full">
-                  <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
-                </Button>
-                <Button asChild className="w-full bg-gradient-to-r from-primary to-accent">
-                  <Link to="/demo" onClick={() => setIsMenuOpen(false)}>Get Demo</Link>
-                </Button>
-              </div>
             </nav>
+
+            {/* Desktop CTA */}
+            <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
+              <Button asChild variant="outline" className="hover-scale text-sm lg:text-base px-3 lg:px-4">
+                <Link to="/contact">Contact</Link>
+              </Button>
+              <Button asChild className="hover-scale bg-gradient-to-r from-primary to-accent text-sm lg:text-base px-3 lg:px-4">
+                <Link to="/demo">Get Demo</Link>
+              </Button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 hover-scale touch-feedback rounded-md transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
           </div>
-        )}
-      </div>
-    </header>
+        </div>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <>
+          <div className="mobile-menu-overlay md:hidden" onClick={() => setIsMenuOpen(false)} />
+          <div className="mobile-menu-container md:hidden">
+            <div className="mobile-menu animate-slide-in-right">
+              <div className="px-4 py-6 space-y-4">
+                <nav className="flex flex-col space-y-4">
+                  {navigation.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium py-2 px-3 rounded-md touch-feedback"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </nav>
+                
+                <div className="border-t border-border pt-4 space-y-3">
+                  <Button asChild variant="outline" className="w-full touch-feedback">
+                    <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
+                  </Button>
+                  <Button asChild className="w-full bg-gradient-to-r from-primary to-accent touch-feedback">
+                    <Link to="/demo" onClick={() => setIsMenuOpen(false)}>Get Demo</Link>
+                  </Button>
+                </div>
+                
+                {/* Mobile Company Attribution */}
+                <div className="pt-4 border-t border-border">
+                  <p className="text-xs text-muted-foreground text-center">
+                    By Mynx Softwares Inc.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </>
   );
 };
 

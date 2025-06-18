@@ -71,6 +71,18 @@
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   }
+
+  /* Ensure minimum touch target sizes on mobile */
+  @media (max-width: 768px) {
+    button, [role="button"], a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    input, textarea, select {
+      font-size: 16px; /* Prevents zoom on iOS */
+    }
+  }
 }
 
 @layer utilities {
@@ -97,6 +109,34 @@
     }
   }
 
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
   .animate-fade-in {
     animation: fade-in 0.6s ease-out;
   }
@@ -105,17 +145,127 @@
     animation: scale-in 0.3s ease-out;
   }
 
+  .animate-slide-in-right {
+    animation: slide-in-right 0.4s ease-out;
+  }
+
+  .animate-bounce-in {
+    animation: bounce-in 0.6s ease-out;
+  }
+
   /* Interactive Elements */
   .story-link {
     @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
 
   .hover-scale {
-    @apply transition-transform duration-200 hover:scale-105;
+    @apply transition-transform duration-200 hover:scale-105 active:scale-95;
+  }
+
+  /* Mobile-optimized hover effects */
+  @media (hover: none) and (pointer: coarse) {
+    .hover-scale:hover {
+      transform: none;
+    }
+    
+    .hover-scale:active {
+      transform: scale(0.95);
+    }
   }
 
   /* Gradient Text */
   .gradient-text {
     @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Mobile Typography */
+  @media (max-width: 640px) {
+    .mobile-text-sm {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+    
+    .mobile-text-base {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+    
+    .mobile-text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+  }
+
+  /* Enhanced Mobile Navigation */
+  .mobile-menu-overlay {
+    @apply fixed inset-0 bg-black/20 backdrop-blur-sm z-40;
+    animation: fade-in 0.2s ease-out;
+  }
+
+  .mobile-menu {
+    @apply fixed top-16 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-border shadow-lg z-50;
+    animation: slide-in-right 0.3s ease-out;
+  }
+
+  /* Touch Feedback */
+  .touch-feedback {
+    @apply transition-all duration-150 active:bg-muted/50 active:scale-95;
+  }
+
+  /* Safe Area Support for Mobile */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Optimized Gradients for Mobile Performance */
+  .mobile-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--primary)) 0%, 
+      hsl(var(--accent)) 100%);
+  }
+
+  /* Form Enhancements for Mobile */
+  .mobile-form-input {
+    @apply w-full px-4 py-3 text-base border border-input rounded-md transition-colors duration-200;
+  }
+
+  .mobile-form-input:focus {
+    @apply outline-none ring-2 ring-primary/20 border-primary;
+  }
+
+  /* Card Hover Effects for Touch Devices */
+  @media (hover: hover) {
+    .card-hover {
+      @apply hover:shadow-lg hover:-translate-y-1;
+    }
+  }
+
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+
+  /* Loading States */
+  .loading-pulse {
+    @apply animate-pulse bg-muted rounded;
+  }
+
+  /* Responsive Video Container */
+  .video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+  }
+
+  .video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
