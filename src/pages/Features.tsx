@@ -1,201 +1,164 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import {
-  Calendar,
-  FileText,
-  CreditCard,
+import { 
+  Calendar, 
+  Users, 
+  FileText, 
+  DollarSign, 
+  BarChart3, 
   Shield,
-  Cloud,
-  BarChart3,
   Smartphone,
-  Link as LinkIcon,
+  Cloud,
+  Zap,
+  Heart,
+  Clock,
   CheckCircle
 } from "lucide-react";
 
 const Features = () => {
-  const features = [
+  const coreFeatures = [
     {
       icon: Calendar,
-      title: "Scheduling & Appointment Management",
-      description: "Complete appointment management system designed for busy chiropractic practices.",
-      benefits: [
-        "Online appointment booking for patients",
-        "Automated appointment reminders via SMS and email",
-        "Waitlist management and automatic rescheduling",
-        "Multi-provider scheduling with resource management",
-        "Recurring appointment templates",
-        "Patient portal integration"
-      ]
+      title: "Smart Scheduling",
+      description: "AI-powered appointment scheduling with automated reminders and conflict resolution.",
+      benefits: ["Reduce no-shows by 40%", "Automated confirmations", "Smart time blocking"],
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: Users,
+      title: "Patient Management",
+      description: "Comprehensive patient records with treatment history and progress tracking.",
+      benefits: ["Complete medical history", "Progress visualization", "Family account linking"],
+      color: "from-purple-500 to-pink-500"
     },
     {
       icon: FileText,
-      title: "SOAP Notes & Documentation",
-      description: "Streamlined clinical documentation with chiropractic-specific templates.",
-      benefits: [
-        "Pre-built SOAP note templates for common conditions",
-        "Voice-to-text documentation support",
-        "Clinical decision support tools",
-        "ICD-10 and CPT code integration",
-        "Digital signature capture",
-        "Progress tracking and outcome measures"
-      ]
+      title: "Digital Records",
+      description: "Paperless documentation with e-signatures and secure cloud storage.",
+      benefits: ["Instant access anywhere", "Legal compliance", "Backup protection"],
+      color: "from-green-500 to-teal-500"
     },
     {
-      icon: CreditCard,
-      title: "Billing & Payment Processing",
-      description: "Comprehensive revenue cycle management to maximize your practice income.",
-      benefits: [
-        "Automated insurance claim submission",
-        "Real-time eligibility verification",
-        "Payment processing and merchant services",
-        "Accounts receivable management",
-        "Financial reporting and analytics",
-        "Patient payment plans and financing"
-      ]
-    },
-    {
-      icon: Shield,
-      title: "HIPAA Compliance & Security",
-      description: "Bank-level security ensuring complete patient data protection.",
-      benefits: [
-        "End-to-end data encryption",
-        "Comprehensive audit trails",
-        "Role-based access controls",
-        "Automatic data backups",
-        "Business Associate Agreement included",
-        "Regular security updates and monitoring"
-      ]
-    },
-    {
-      icon: Cloud,
-      title: "Cloud-Based Access & Mobile",
-      description: "Access your practice management system from anywhere, anytime.",
-      benefits: [
-        "Web-based access from any device",
-        "Native iOS and Android mobile apps",
-        "Offline capability for critical functions",
-        "Automatic software updates",
-        "99.9% uptime guarantee",
-        "Multi-location practice support"
-      ]
+      icon: DollarSign,
+      title: "Billing & Insurance",
+      description: "Automated billing, insurance claims processing, and payment tracking.",
+      benefits: ["Faster reimbursements", "Error reduction", "Payment reminders"],
+      color: "from-orange-500 to-red-500"
     },
     {
       icon: BarChart3,
-      title: "Reports & Analytics",
-      description: "Powerful insights to help you make data-driven practice decisions.",
-      benefits: [
-        "Real-time practice performance dashboards",
-        "Financial and productivity reports",
-        "Patient outcome tracking",
-        "Marketing ROI analysis",
-        "Custom report builder",
-        "Automated report scheduling"
-      ]
+      title: "Analytics Dashboard",
+      description: "Real-time insights into practice performance and patient outcomes.",
+      benefits: ["Revenue tracking", "Patient insights", "Performance metrics"],
+      color: "from-indigo-500 to-purple-500"
     },
     {
-      icon: Smartphone,
-      title: "Mobile Access",
-      description: "Full-featured mobile apps for providers and patients.",
-      benefits: [
-        "Complete EMR access on mobile devices",
-        "Patient check-in and forms on tablets",
-        "Mobile payment processing",
-        "Secure messaging with patients",
-        "Photo documentation and imaging",
-        "Push notifications for important updates"
-      ]
-    },
-    {
-      icon: LinkIcon,
-      title: "Integration Capabilities",
-      description: "Seamlessly connect with your existing practice tools and equipment.",
-      benefits: [
-        "X-ray and imaging system integration",
-        "Lab results and diagnostic tool connectivity",
-        "Marketing platform integrations",
-        "Accounting software synchronization",
-        "Telehealth platform integration",
-        "Third-party app marketplace"
-      ]
+      icon: Shield,
+      title: "HIPAA Compliance",
+      description: "Built-in security measures ensuring full HIPAA compliance and data protection.",
+      benefits: ["End-to-end encryption", "Audit trails", "Compliance reporting"],
+      color: "from-gray-600 to-gray-800"
     }
   ];
 
-  return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-background to-muted/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Powerful Features for Modern 
-            <span className="text-primary"> Chiropractic Practices</span>
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            Comprehensive EMR solution with everything you need to streamline operations, 
-            improve patient care, and grow your practice.
-          </p>
-          <Button asChild size="lg">
-            <Link to="/demo">See Features in Action</Link>
-          </Button>
-        </div>
-      </section>
+  const additionalFeatures = [
+    { icon: Smartphone, title: "Mobile Access", description: "Full functionality on all devices" },
+    { icon: Cloud, title: "Cloud Storage", description: "Secure, scalable cloud infrastructure" },
+    { icon: Zap, title: "Fast Performance", description: "Lightning-fast response times" },
+    { icon: Heart, title: "Patient Portal", description: "Self-service portal for patients" },
+    { icon: Clock, title: "24/7 Support", description: "Round-the-clock technical assistance" },
+    { icon: CheckCircle, title: "Easy Setup", description: "Quick implementation and training" }
+  ];
 
-      {/* Features Grid */}
-      <section className="py-20">
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 bg-pattern">
+      {/* Hero Section */}
+      <section className="py-12 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-16">
-            {features.map((feature, index) => (
-              <div key={index} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <Card className="h-full">
-                    <CardHeader>
-                      <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                        <feature.icon className="w-8 h-8 text-primary" />
-                      </div>
-                      <CardTitle className="text-2xl mb-4">{feature.title}</CardTitle>
-                      <p className="text-muted-foreground text-lg">{feature.description}</p>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="grid gap-3">
-                        {feature.benefits.map((benefit, benefitIndex) => (
-                          <div key={benefitIndex} className="flex items-start space-x-3">
-                            <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                            <span className="text-muted-foreground">{benefit}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-                <div className={`bg-muted/20 rounded-2xl aspect-video flex items-center justify-center ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                  <div className="text-center">
-                    <feature.icon className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-                    <p className="text-muted-foreground">Feature Demo Screenshot</p>
+          <div className="text-center mb-12 sm:mb-16">
+            <Badge variant="outline" className="mb-4 animate-bounce-in">
+              ⚡ Powerful Features
+            </Badge>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 gradient-text-electric animate-fade-in">
+              Everything Your Practice Needs
+            </h1>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto animate-stagger-1">
+              Comprehensive practice management tools designed specifically for modern chiropractic practices.
+            </p>
+          </div>
+
+          {/* Core Features Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
+            {coreFeatures.map((feature, index) => (
+              <Card key={feature.title} className={`card-glow hover-3d animate-stagger-${Math.min(index + 1, 4)}`}>
+                <CardHeader className="text-center pb-4">
+                  <div className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-r ${feature.color} flex items-center justify-center mb-4 floating-element`}>
+                    <feature.icon className="h-8 w-8 text-white" />
                   </div>
-                </div>
-              </div>
+                  <CardTitle className="text-xl gradient-text">{feature.title}</CardTitle>
+                  <CardDescription className="text-base">
+                    {feature.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {feature.benefits.map((benefit) => (
+                      <li key={benefit} className="flex items-center text-sm text-muted-foreground">
+                        <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-            Ready to Experience These Features?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Schedule a personalized demo to see how EChiroPartners can transform your practice.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg">
-              <Link to="/demo">Schedule Demo</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link to="/benefits">See Benefits</Link>
-            </Button>
+          {/* Additional Features */}
+          <div className="bg-gradient-vibrant rounded-2xl p-8 mb-16 animate-gradient-shift">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                Plus Many More Features
+              </h2>
+              <p className="text-white/90 text-lg">
+                A complete ecosystem of tools to streamline your practice
+              </p>
+            </div>
+            
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {additionalFeatures.map((feature, index) => (
+                <div key={feature.title} className={`bg-white/10 backdrop-blur-sm rounded-lg p-6 hover-scale animate-stagger-${Math.min(index + 1, 4)}`}>
+                  <feature.icon className="h-8 w-8 text-white mb-4" />
+                  <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+                  <p className="text-white/80 text-sm">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center">
+            <Card className="card-vibrant max-w-2xl mx-auto animate-scale-in">
+              <CardContent className="p-8">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4 gradient-text-vibrant">
+                  Ready to Experience These Features?
+                </h2>
+                <p className="text-muted-foreground mb-6 text-lg">
+                  See how EChiroPartners can transform your practice with a personalized demo.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button asChild className="btn-vibrant hover-bounce">
+                    <Link to="/demo">Schedule Demo</Link>
+                  </Button>
+                  <Button asChild variant="outline" className="hover-scale">
+                    <Link to="/contact">Contact Sales</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

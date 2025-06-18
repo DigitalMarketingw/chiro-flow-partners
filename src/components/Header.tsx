@@ -10,7 +10,6 @@ const Header = () => {
   const navigation = [
     { name: "Features", href: "/features" },
     { name: "Benefits", href: "/benefits" },
-    { name: "Why Switch", href: "/why-switch" },
     { name: "About Us", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
@@ -105,9 +104,9 @@ const Header = () => {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <>
-          <div className="mobile-menu-overlay md:hidden" onClick={() => setIsMenuOpen(false)} />
-          <div className="mobile-menu-container md:hidden">
-            <div className="mobile-menu animate-slide-in-right">
+          <div className="fixed inset-0 bg-black/50 z-[60] md:hidden" onClick={() => setIsMenuOpen(false)} />
+          <div className="mobile-menu-container md:hidden fixed inset-y-0 right-0 z-[70] w-64 max-w-sm">
+            <div className="mobile-menu animate-slide-in-right bg-white h-full shadow-xl">
               <div className="px-4 py-6 space-y-4">
                 <nav className="flex flex-col space-y-4">
                   {navigation.map((item) => (
