@@ -101,11 +101,11 @@ const Hero = () => {
           {/* Right Column - Hero Image */}
           <div className="relative lg:order-2">
             <div className="relative">              
-              {/* Main hero image */}
+              {/* Main hero image - Updated to use the new promotional image */}
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img 
-                  src="/lovable-uploads/e80bcbb2-dd20-4012-9951-140925008de1.png" 
-                  alt="EChiroPartners EMR Software - Streamline Your Practice" 
+                  src="/lovable-uploads/9dafadf5-1367-46a1-a9c4-6cc368a0a14d.png" 
+                  alt="EChiroPartners EMR Software - Streamline Your Practice with Modern Features" 
                   className="w-full h-auto object-cover"
                 />
               </div>
