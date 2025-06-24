@@ -12,7 +12,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/4e70bfe4-9ea6-4c83-8811-cedb73e56130.png" 
                 alt="EChiroPartners Logo" 
-                className="h-8 w-auto"
+                className="h-20 w-auto"
               />
             </div>
             <p className="text-muted-foreground text-sm">
