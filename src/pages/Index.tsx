@@ -13,7 +13,11 @@ import {
   Star,
   ArrowRight,
   Sparkles,
-  Zap
+  Zap,
+  Brain,
+  Users,
+  TrendingUp,
+  Clock
 } from "lucide-react";
 
 const Index = () => {
@@ -81,6 +85,202 @@ const Index = () => {
     <>
       <Hero />
       
+      {/* Software Showcase - Analytics Dashboard */}
+      <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 bg-pattern overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-32 left-20 w-48 h-48 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl floating-element"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/10 to-indigo-500/10 text-blue-600 text-sm font-medium mb-6 animate-fade-in hover-bounce border border-blue-500/20">
+                <BarChart3 className="w-5 h-5 mr-3 animate-pulse" />
+                Advanced Analytics
+                <TrendingUp className="w-4 h-4 ml-3 text-green-500" />
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6 gradient-text-electric animate-stagger-1">
+                Powerful Analytics & Reporting Dashboard
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8 animate-stagger-2">
+                Get real-time insights into your practice performance with comprehensive charts, 
+                patient analytics, and revenue tracking - all in one intuitive dashboard.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center space-x-3 animate-stagger-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full animate-pulse"></div>
+                  <span className="text-muted-foreground">Interactive charts and graphs</span>
+                </div>
+                <div className="flex items-center space-x-3 animate-stagger-4">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></div>
+                  <span className="text-muted-foreground">Patient outcome tracking</span>
+                </div>
+                <div className="flex items-center space-x-3 animate-stagger-4">
+                  <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-teal-500 rounded-full animate-pulse"></div>
+                  <span className="text-muted-foreground">Revenue and billing insights</span>
+                </div>
+              </div>
+            </div>
+            <div className="relative animate-scale-in">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl"></div>
+              <img 
+                src="/lovable-uploads/1b53751f-ea2f-46ac-927b-665a9ee89b31.png" 
+                alt="EChiroPartners Analytics Dashboard" 
+                className="relative w-full rounded-xl shadow-2xl hover-3d"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Software Showcase - Billing System */}
+      <section className="relative py-20 bg-gradient-to-br from-emerald-50 via-white to-teal-50 bg-pattern overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-32 right-20 w-48 h-48 bg-gradient-to-br from-green-400/20 to-cyan-400/20 rounded-full blur-2xl floating-element"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative animate-scale-in lg:order-1">
+              <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-2xl blur-xl"></div>
+              <img 
+                src="/lovable-uploads/c858e7dd-1ec8-449d-a097-ebd74cde98b3.png" 
+                alt="EChiroPartners Billing System" 
+                className="relative w-full rounded-xl shadow-2xl hover-3d"
+              />
+            </div>
+            <div className="animate-fade-in lg:order-2">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-emerald-500/10 to-teal-500/10 text-emerald-600 text-sm font-medium mb-6 animate-fade-in hover-bounce border border-emerald-500/20">
+                <CreditCard className="w-5 h-5 mr-3 animate-pulse" />
+                Integrated Billing
+                <Sparkles className="w-4 h-4 ml-3 text-yellow-500 animate-float" />
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6 gradient-text-electric animate-stagger-1">
+                Complete Billing & Revenue Management
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8 animate-stagger-2">
+                Streamline your billing process with automated claims processing, 
+                insurance verification, and comprehensive payment tracking.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center space-x-3 animate-stagger-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full animate-pulse"></div>
+                  <span className="text-muted-foreground">Automated insurance claims</span>
+                </div>
+                <div className="flex items-center space-x-3 animate-stagger-4">
+                  <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-cyan-500 rounded-full animate-pulse"></div>
+                  <span className="text-muted-foreground">Real-time payment processing</span>
+                </div>
+                <div className="flex items-center space-x-3 animate-stagger-4">
+                  <div className="w-2 h-2 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full animate-pulse"></div>
+                  <span className="text-muted-foreground">Detailed billing summaries</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Software Showcase - SOAP Notes */}
+      <section className="relative py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50 bg-pattern overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-32 left-20 w-48 h-48 bg-gradient-to-br from-indigo-400/20 to-purple-400/20 rounded-full blur-2xl floating-element"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 text-purple-600 text-sm font-medium mb-6 animate-fade-in hover-bounce border border-purple-500/20">
+                <FileText className="w-5 h-5 mr-3 animate-pulse" />
+                Smart Documentation
+                <Sparkles className="w-4 h-4 ml-3 text-yellow-500 animate-float" />
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6 gradient-text-electric animate-stagger-1">
+                Intelligent SOAP Notes & Patient Records
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8 animate-stagger-2">
+                Create comprehensive patient documentation with smart templates, 
+                voice-to-text capability, and integrated clinical decision support.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center space-x-3 animate-stagger-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></div>
+                  <span className="text-muted-foreground">Pre-built chiropractic templates</span>
+                </div>
+                <div className="flex items-center space-x-3 animate-stagger-4">
+                  <div className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full animate-pulse"></div>
+                  <span className="text-muted-foreground">Voice-to-text documentation</span>
+                </div>
+                <div className="flex items-center space-x-3 animate-stagger-4">
+                  <div className="w-2 h-2 bg-gradient-to-r from-pink-500 to-red-500 rounded-full animate-pulse"></div>
+                  <span className="text-muted-foreground">Clinical decision support</span>
+                </div>
+              </div>
+            </div>
+            <div className="relative animate-scale-in">
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-xl"></div>
+              <img 
+                src="/lovable-uploads/a19ec675-7827-44cc-8768-30443e79087e.png" 
+                alt="EChiroPartners SOAP Notes System" 
+                className="relative w-full rounded-xl shadow-2xl hover-3d"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Software Showcase - AI Integration */}
+      <section className="relative py-20 bg-gradient-to-br from-cyan-50 via-white to-blue-50 bg-pattern overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-32 right-20 w-48 h-48 bg-gradient-to-br from-teal-400/20 to-cyan-400/20 rounded-full blur-2xl floating-element"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative animate-scale-in lg:order-1">
+              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl blur-xl"></div>
+              <img 
+                src="/lovable-uploads/39a06db7-ff29-427e-8970-b90e9325a00d.png" 
+                alt="EChiroPartners AI Integration" 
+                className="relative w-full rounded-xl shadow-2xl hover-3d"
+              />
+            </div>
+            <div className="animate-fade-in lg:order-2">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-cyan-600 text-sm font-medium mb-6 animate-fade-in hover-bounce border border-cyan-500/20">
+                <Brain className="w-5 h-5 mr-3 animate-pulse" />
+                AI-Powered Features
+                <Zap className="w-4 h-4 ml-3 text-orange-500 animate-pulse" />
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6 gradient-text-electric animate-stagger-1">
+                AI-Enhanced Practice Management
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8 animate-stagger-2">
+                Experience the future of chiropractic care with AI-powered scheduling, 
+                automated documentation, and intelligent patient management systems.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center space-x-3 animate-stagger-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full animate-pulse"></div>
+                  <span className="text-muted-foreground">AI-powered scheduling optimization</span>
+                </div>
+                <div className="flex items-center space-x-3 animate-stagger-4">
+                  <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full animate-pulse"></div>
+                  <span className="text-muted-foreground">Automated patient reminders</span>
+                </div>
+                <div className="flex items-center space-x-3 animate-stagger-4">
+                  <div className="w-2 h-2 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full animate-pulse"></div>
+                  <span className="text-muted-foreground">Intelligent workflow automation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 bg-pattern overflow-hidden">
         {/* Animated background elements */}
