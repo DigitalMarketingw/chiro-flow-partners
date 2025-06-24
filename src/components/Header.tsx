@@ -54,7 +54,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/4e70bfe4-9ea6-4c83-8811-cedb73e56130.png" 
                 alt="EChiroPartners Logo" 
-                className="h-18 w-auto"
+                className="h-12 w-auto"
               />
             </Link>
 
