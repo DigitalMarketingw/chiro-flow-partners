@@ -57,9 +57,9 @@ const Header = () => {
                 alt="EChiroPartners Logo" 
                 className="h-8 w-auto"
               />
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <span className="text-xs text-muted-foreground hidden sm:block">By Mynx Softwares Inc.</span>
-              </div>
+              </div> */}
             </Link>
 
             {/* Desktop Navigation */}
