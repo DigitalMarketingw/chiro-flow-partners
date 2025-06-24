@@ -12,42 +12,42 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative py-16 lg:py-24 bg-gradient-to-br from-white via-slate-50 to-purple-50 overflow-hidden min-h-[80vh] flex items-center">
-      {/* Subtle background elements */}
+    <section className="relative py-20 lg:py-32 bg-gradient-to-br from-white via-slate-50 to-purple-50 overflow-hidden min-h-[90vh] flex items-center">
+      {/* Minimal background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
+        <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-purple-200/20 to-pink-200/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-20 -left-20 w-32 h-32 bg-gradient-to-br from-blue-200/20 to-purple-200/20 rounded-full blur-3xl"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Left Column - Text Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 lg:pr-8">
             {/* Badge */}
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 text-sm font-medium animate-fade-in border border-purple-200">
-              <CheckCircle className="w-5 h-5 mr-3 text-green-500" />
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm text-purple-700 text-sm font-medium border border-purple-200/50 shadow-sm">
+              <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
               Trusted by 500+ Chiropractic Practices
-              <Sparkles className="w-4 h-4 ml-3 text-purple-500" />
+              <Sparkles className="w-4 h-4 ml-2 text-purple-500" />
             </div>
 
             {/* Main Headline */}
             <div className="space-y-6">
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight animate-fade-in">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
                 Streamline Your Practice with{" "}
-                <span className="relative inline-block bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                   EChiroPartners
                 </span>
               </h1>
 
               {/* Subheadline */}
-              <p className="text-lg lg:text-xl text-gray-600 leading-relaxed animate-stagger-1 max-w-lg">
+              <p className="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-lg">
                 Simplify patient management with EChiroPartners – the smart, cloud-based EMR for seamless workflows and better care.
               </p>
             </div>
 
             {/* Made by section */}
-            <div className="animate-stagger-2">
-              <p className="text-base font-semibold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-1">
+            <div>
+              <p className="text-base font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-1">
                 Made by Chiropractors, For Chiropractors
               </p>
               <p className="text-sm text-gray-500 font-medium">
@@ -56,18 +56,18 @@ const Hero = () => {
             </div>
 
             {/* Benefits List - Clean Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 animate-stagger-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center space-x-3 bg-white/60 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-100">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                <div key={index} className="flex items-center space-x-3 bg-white/60 backdrop-blur-sm rounded-lg px-3 py-2 border border-gray-100/50 shadow-sm">
+                  <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
                   <span className="text-sm font-medium text-gray-700">{benefit}</span>
                 </div>
               ))}
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-stagger-4 pt-4">
-              <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg h-auto rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 text-lg h-auto rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
                 <Link to="/demo" className="flex items-center">
                   Get Personalized Demo
                   <Sparkles className="w-5 h-5 ml-2" />
@@ -82,16 +82,16 @@ const Hero = () => {
             </div>
 
             {/* Trust Indicators - Minimal */}
-            <div className="flex items-center space-x-8 pt-6 animate-fade-in">
+            <div className="flex items-center space-x-6 pt-6">
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
-                  <CheckCircle className="w-5 h-5 text-white" />
+                <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-md">
+                  <CheckCircle className="w-4 h-4 text-white" />
                 </div>
                 <div className="text-xs font-bold text-green-600">HIPAA COMPLIANT</div>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
-                  <CheckCircle className="w-5 h-5 text-white" />
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center shadow-md">
+                  <CheckCircle className="w-4 h-4 text-white" />
                 </div>
                 <div className="text-xs font-bold text-blue-600">99.9% UPTIME</div>
               </div>
@@ -99,12 +99,12 @@ const Hero = () => {
           </div>
 
           {/* Right Column - Hero Image */}
-          <div className="relative lg:order-2 animate-scale-in">
+          <div className="relative lg:order-2">
             <div className="relative">              
               {/* Main hero image */}
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img 
-                  src="/lovable-uploads/a4a01e40-5736-4b58-a3b2-5ce31bff0885.png" 
+                  src="/lovable-uploads/e80bcbb2-dd20-4012-9951-140925008de1.png" 
                   alt="EChiroPartners EMR Software - Streamline Your Practice" 
                   className="w-full h-auto object-cover"
                 />

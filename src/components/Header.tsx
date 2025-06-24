@@ -49,13 +49,13 @@ const Header = () => {
     <>
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border z-50 safe-area-top">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo */}
+          <div className="flex justify-between items-center h-24">
+            {/* Logo - Increased size */}
             <Link to="/" className="flex items-center space-x-2 md:space-x-3 hover-scale" onClick={() => setIsMenuOpen(false)}>
               <img 
                 src="/lovable-uploads/6b65e65f-cfc0-4dcf-a139-15b778d0dd71.png" 
                 alt="EChiroPartners Logo" 
-                className="h-32 w-auto"
+                className="h-16 w-auto"
               />
             </Link>
 
