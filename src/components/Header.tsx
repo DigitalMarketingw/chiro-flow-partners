@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -49,7 +48,7 @@ const Header = () => {
     <>
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border z-50 safe-area-top">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2 md:space-x-3 hover-scale" onClick={() => setIsMenuOpen(false)}>
               <img 
@@ -57,9 +56,6 @@ const Header = () => {
                 alt="EChiroPartners Logo" 
                 className="h-24 w-auto"
               />
-              {/* <div className="flex flex-col">
-                <span className="text-xs text-muted-foreground hidden sm:block">By Mynx Softwares Inc.</span>
-              </div> */}
             </Link>
 
             {/* Desktop Navigation */}
