@@ -1,4 +1,3 @@
-
 import Hero from "@/components/Hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -86,7 +85,7 @@ const Index = () => {
       <Hero />
       
       {/* Software Showcase - Analytics Dashboard */}
-      <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 bg-pattern overflow-hidden">
+      <section className="relative py-12 md:py-16 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 bg-pattern overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl animate-float"></div>
           <div className="absolute bottom-32 left-20 w-48 h-48 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl floating-element"></div>
@@ -135,7 +134,7 @@ const Index = () => {
       </section>
 
       {/* Software Showcase - Billing System */}
-      <section className="relative py-20 bg-gradient-to-br from-emerald-50 via-white to-teal-50 bg-pattern overflow-hidden">
+      <section className="relative py-12 md:py-16 bg-gradient-to-br from-emerald-50 via-white to-teal-50 bg-pattern overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-full blur-3xl animate-float"></div>
           <div className="absolute bottom-32 right-20 w-48 h-48 bg-gradient-to-br from-green-400/20 to-cyan-400/20 rounded-full blur-2xl floating-element"></div>
@@ -184,7 +183,7 @@ const Index = () => {
       </section>
 
       {/* Software Showcase - SOAP Notes */}
-      <section className="relative py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50 bg-pattern overflow-hidden">
+      <section className="relative py-12 md:py-16 bg-gradient-to-br from-purple-50 via-white to-pink-50 bg-pattern overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-float"></div>
           <div className="absolute bottom-32 left-20 w-48 h-48 bg-gradient-to-br from-indigo-400/20 to-purple-400/20 rounded-full blur-2xl floating-element"></div>
@@ -233,7 +232,7 @@ const Index = () => {
       </section>
 
       {/* Software Showcase - AI Integration */}
-      <section className="relative py-20 bg-gradient-to-br from-cyan-50 via-white to-blue-50 bg-pattern overflow-hidden">
+      <section className="relative py-12 md:py-16 bg-gradient-to-br from-cyan-50 via-white to-blue-50 bg-pattern overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-full blur-3xl animate-float"></div>
           <div className="absolute bottom-32 right-20 w-48 h-48 bg-gradient-to-br from-teal-400/20 to-cyan-400/20 rounded-full blur-2xl floating-element"></div>
@@ -282,7 +281,7 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 bg-pattern overflow-hidden">
+      <section className="relative py-12 md:py-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 bg-pattern overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-float"></div>
@@ -337,7 +336,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="relative py-20 bg-gradient-vibrant overflow-hidden animate-gradient-shift">
+      <section className="relative py-12 md:py-16 bg-gradient-vibrant overflow-hidden animate-gradient-shift">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-xl animate-float"></div>
@@ -379,7 +378,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary via-accent to-purple-600 overflow-hidden">
+      <section className="relative py-12 md:py-16 bg-gradient-to-br from-primary via-accent to-purple-600 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-10 right-10 w-20 h-20 bg-white/10 rounded-full animate-float"></div>

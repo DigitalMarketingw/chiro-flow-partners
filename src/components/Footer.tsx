@@ -9,16 +9,17 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-md flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-sm">EC</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-semibold">EChiroPartners</span>
-                <span className="text-xs text-muted-foreground">By Mynx Softwares Inc.</span>
-              </div>
+              <img 
+                src="/lovable-uploads/8b6fc853-181d-4888-b771-7afa742e8511.png" 
+                alt="EChiroPartners Logo" 
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-muted-foreground text-sm">
               Made by Chiropractors, For Chiropractors. Empowering chiropractic practices with modern EMR solutions for over 20 years.
+            </p>
+            <p className="text-xs text-muted-foreground">
+              By Mynx Softwares Inc.
             </p>
           </div>
 

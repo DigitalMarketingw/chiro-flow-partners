@@ -52,11 +52,12 @@ const Header = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2 md:space-x-3 hover-scale" onClick={() => setIsMenuOpen(false)}>
-              <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary to-accent rounded-md flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xs md:text-sm">EC</span>
-              </div>
+              <img 
+                src="/lovable-uploads/8b6fc853-181d-4888-b771-7afa742e8511.png" 
+                alt="EChiroPartners Logo" 
+                className="h-8 w-auto"
+              />
               <div className="flex flex-col">
-                <span className="text-lg md:text-xl font-semibold text-foreground">EChiroPartners</span>
                 <span className="text-xs text-muted-foreground hidden sm:block">By Mynx Softwares Inc.</span>
               </div>
             </Link>
