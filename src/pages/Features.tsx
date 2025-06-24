@@ -74,12 +74,12 @@ const Features = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/5 to-accent/5 bg-pattern">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 bg-pattern">
       {/* Hero Section */}
       <section className="py-12 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <Badge className="mb-4 bg-accent/10 text-accent border-accent/20 animate-bounce-in">
+            <Badge variant="outline" className="mb-4 animate-bounce-in">
               ⚡ Powerful Features
             </Badge>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 gradient-text-electric animate-fade-in">
@@ -118,7 +118,7 @@ const Features = () => {
           </div>
 
           {/* Additional Features */}
-          <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 mb-16 animate-gradient-shift">
+          <div className="bg-gradient-vibrant rounded-2xl p-8 mb-16 animate-gradient-shift">
             <div className="text-center mb-8">
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                 Plus Many More Features
@@ -143,17 +143,17 @@ const Features = () => {
           <div className="text-center">
             <Card className="card-vibrant max-w-2xl mx-auto animate-scale-in">
               <CardContent className="p-8">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4 gradient-text-electric">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4 gradient-text-vibrant">
                   Ready to Experience These Features?
                 </h2>
                 <p className="text-muted-foreground mb-6 text-lg">
                   See how EChiroPartners can transform your practice with a personalized demo.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button asChild className="bg-gradient-to-r from-primary to-accent hover-bounce">
+                  <Button asChild className="btn-vibrant hover-bounce">
                     <Link to="/demo">Schedule Demo</Link>
                   </Button>
-                  <Button asChild variant="outline" className="hover-scale border-primary/20">
+                  <Button asChild variant="outline" className="hover-scale">
                     <Link to="/contact">Contact Sales</Link>
                   </Button>
                 </div>

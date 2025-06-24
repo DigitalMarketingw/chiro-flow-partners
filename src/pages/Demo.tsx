@@ -65,23 +65,23 @@ const Demo = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/5 to-accent/5 bg-pattern">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 bg-pattern">
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-accent/20 to-primary/20 rounded-full blur-3xl floating-element"></div>
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-teal-400/20 to-green-400/20 rounded-full blur-3xl floating-element"></div>
           
           {/* Floating particles */}
-          <div className="absolute top-20 left-20 w-4 h-4 bg-gradient-to-r from-primary to-accent rounded-full animate-float opacity-60"></div>
-          <div className="absolute top-40 right-32 w-3 h-3 bg-gradient-to-r from-accent to-primary rounded-full floating-element opacity-70"></div>
-          <div className="absolute bottom-32 left-1/3 w-5 h-5 bg-gradient-to-r from-primary to-accent rounded-full animate-float opacity-50"></div>
+          <div className="absolute top-20 left-20 w-4 h-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-float opacity-60"></div>
+          <div className="absolute top-40 right-32 w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full floating-element opacity-70"></div>
+          <div className="absolute bottom-32 left-1/3 w-5 h-5 bg-gradient-to-r from-green-400 to-teal-500 rounded-full animate-float opacity-50"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto mb-12">
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6 animate-fade-in hover-bounce border border-accent/20">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-primary/10 via-accent/10 to-purple/10 text-primary text-sm font-medium mb-6 animate-fade-in hover-bounce border border-primary/20">
               <Clock className="w-5 h-5 mr-3" />
               30-Minute Personalized Demo
               <Sparkles className="w-4 h-4 ml-3 text-yellow-500 animate-float" />
@@ -112,7 +112,7 @@ const Demo = () => {
       <section className="relative py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold mb-4 gradient-text-electric animate-fade-in">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 gradient-text-vibrant animate-fade-in">
               What You'll See in Your Demo
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-stagger-1">
@@ -135,7 +135,7 @@ const Demo = () => {
           </div>
 
           {/* Demo Stats */}
-          <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 animate-gradient-shift">
+          <div className="bg-gradient-vibrant rounded-2xl p-8 animate-gradient-shift">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               {demoStats.map((stat, index) => (
                 <div key={index} className={`text-center hover-bounce animate-stagger-${Math.min(index + 1, 4)}`}>
@@ -203,7 +203,7 @@ const Demo = () => {
               <Card className="card-vibrant animate-stagger-2">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-lg flex items-center justify-center mr-3 floating-element">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mr-3 floating-element">
                       <Headphones className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-lg font-semibold gradient-text">
@@ -229,7 +229,7 @@ const Demo = () => {
 
               {/* Testimonials */}
               <div className="animate-stagger-3">
-                <h3 className="text-xl font-bold mb-4 gradient-text-electric">Demo Feedback</h3>
+                <h3 className="text-xl font-bold mb-4 gradient-text-vibrant">Demo Feedback</h3>
                 <div className="space-y-4">
                   {testimonials.map((testimonial, index) => (
                     <Card key={index} className={`card-glow hover-scale animate-stagger-${index + 1}`}>
