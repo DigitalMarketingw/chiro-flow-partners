@@ -118,7 +118,7 @@ const Hero = () => {
               {/* Main hero image */}
               <div className="relative overflow-hidden rounded-2xl shadow-2xl hover-3d transition-transform duration-500">
                 <img 
-                  src="/lovable-uploads/hero-marketing-image.png" 
+                  src="/lovable-uploads/fa74de51-446a-4db4-8f8c-6d6446efdc37.png" 
                   alt="EChiroPartners EMR Software Dashboard" 
                   className="w-full h-auto object-cover"
                 />
