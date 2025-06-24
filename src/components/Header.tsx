@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -54,7 +55,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/6b65e65f-cfc0-4dcf-a139-15b778d0dd71.png" 
                 alt="EChiroPartners Logo" 
-                className="h-24 w-auto"
+                className="h-32 w-auto"
               />
             </Link>
 
