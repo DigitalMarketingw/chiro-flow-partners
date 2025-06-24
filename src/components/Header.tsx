@@ -53,7 +53,7 @@ const Header = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2 md:space-x-3 hover-scale" onClick={() => setIsMenuOpen(false)}>
               <img 
-                src="/lovable-uploads/8b6fc853-181d-4888-b771-7afa742e8511.png" 
+                src="/lovable-uploads/fa74de51-446a-4db4-8f8c-6d6446efdc37.png" 
                 alt="EChiroPartners Logo" 
                 className="h-8 w-auto"
               />
