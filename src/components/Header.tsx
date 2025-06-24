@@ -55,7 +55,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/6b65e65f-cfc0-4dcf-a139-15b778d0dd71.png" 
                 alt="EChiroPartners Logo" 
-                className="h-14 w-auto"
+                className="h-20 w-auto"
               />
               {/* <div className="flex flex-col">
                 <span className="text-xs text-muted-foreground hidden sm:block">By Mynx Softwares Inc.</span>
